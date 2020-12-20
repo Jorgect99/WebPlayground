@@ -1,0 +1,2 @@
+The dispatch method takes in the request and ultimately returns the response.
+
