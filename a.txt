@@ -1,2 +1,7 @@
 The dispatch method takes in the request and ultimately returns the response.
 
+relaciones 
+
+one ot one (1:1) 1 usuario - 1 perfil
+foreignKey (1:N) 1 autor <- N entradas
+many to many (N:M) N entradas <-> M categorias
