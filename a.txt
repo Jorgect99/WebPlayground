@@ -5,3 +5,14 @@ relaciones
 one ot one (1:1) 1 usuario - 1 perfil
 foreignKey (1:N) 1 autor <- N entradas
 many to many (N:M) N entradas <-> M categorias
+
+TDD (Test Driven Development o Desarrollo Guiado por Pruebas)
+el TDD tiene tradicionalmente 4 fases:
+
+Escribir el Test y hacer que falle.
+
+Escribir la mínima cantidad de código para que el test pase.
+
+Escribir un nuevo test y hacer que falle.
+
+Escribir el algoritmo necesario para hacer pasar el test.
