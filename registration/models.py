@@ -5,7 +5,7 @@ from django.db.models.signals import post_save
 
 def custom_upload_to(instance, filename):
     old_instance = Profile.objects.get(pk=instance.pk)
-    old_instance_avatar.delete()
+    old_instance.avatar.delete()
     return 'profiles/'+filename
 
 
