@@ -16,3 +16,7 @@ Escribir la mínima cantidad de código para que el test pase.
 Escribir un nuevo test y hacer que falle.
 
 Escribir el algoritmo necesario para hacer pasar el test.
+
+
+Peticiones asincronas
+peticiones en segundo plano

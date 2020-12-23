@@ -8,7 +8,7 @@ class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
-
+    
     class Meta:
         ordering = ['created']
 
@@ -31,9 +31,13 @@ class ThreadManager(models.Manager):
 class Thread(models.Model):
     users = models.ManyToManyField(User, related_name="threads")
     messages = models.ManyToManyField(Message)
+    updated = models.DateTimeField(auto_now=True)
 
     objects = ThreadManager()
     #Thread.objects.find(user1,user2)
+
+    class Meta:
+        ordering = ["-updated"]
 
 def messages_changed(sender, **kwargs):
     instance = kwargs.pop("instance", None)
@@ -53,5 +57,8 @@ def messages_changed(sender, **kwargs):
 
     #Buscar los mensajes de false_pk que estan en pk_set y los borramos de pk_set
     pk_set.difference_update(false_pk_set)
+    
+    #Forzar actualizacion haciendo save
+    instance.save()
 
 m2m_changed.connect(messages_changed, sender=Thread.messages.through)
